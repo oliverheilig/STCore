@@ -32,6 +32,7 @@ namespace STCore
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseDefaultFiles(); // for index.html
             app.UseStaticFiles(); // For the wwwroot folder
             app.UseRouting();
 
