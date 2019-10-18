@@ -48,13 +48,13 @@
             if (!window.token) {
                 // no token defined - use xMap-1 background tlies
                 var url = 'https://api{s}-test.cloud.ptvgroup.com/WMS/GetTile/xmap-{profile}-bg/{x}/{y}/{z}.png'
-                var background = new L.TileLayer.WMS(url, {
+                var background = new L.tileLayer(url, {
                     maxZoom: 19,
                     minZoom: 0,
                     opacity: 1.0,
                     noWrap: true,
                     attribution: '<a target="_blank" href="http://www.ptvgroup.com">PTV</a>, TOMTOM',
-                    profile: 'silkysand',
+                    profile: 'gravelpit',
                     subdomains: '1234'
                 });
 
