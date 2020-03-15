@@ -47,9 +47,13 @@ namespace STCore
                 await TileHandler.RenderTile(context, cn);
             });
 
+            routeBuilder.MapGet("/pick/{lat}/{lng}", async context =>
+            {
+                await PickHandler.PickElement(context, cn);
+            });
+
             var routes = routeBuilder.Build();
             app.UseRouter(routes);
         }
     }
 }
-

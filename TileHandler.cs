@@ -98,11 +98,9 @@ namespace STCore
 
                 context.Response.ContentType = "image/PNG";
                 await context.Response.Body.WriteAsync(ResultData);
-
             }
         }
     }
-
 
     public class Classification<V, A> where V : IComparable
     {
