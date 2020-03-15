@@ -22,7 +22,7 @@
 </head>
 
 <body>
-    <div id="map" />
+    <div id="map"></div>
     <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
     <script src="./token.js"></script>
     <script>
@@ -45,14 +45,14 @@
         map.addLayer(myTileLayer);
 
         // set cursor always interactive
-        $('.leaflet-container').css('cursor', 'pointer');
+        document.getElementById('map').style.cursor = 'pointer';
 
         // add click handler
         map.on('click', function (e) {
             var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function () {
                 if (this.readyState == 4 && this.status == 200) {
-                    displayResult(data, e.latlng);
+                    displayResult(JSON.parse(xhttp.responseText), e.latlng);
                 }
             };
 
